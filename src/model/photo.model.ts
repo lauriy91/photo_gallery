@@ -19,7 +19,7 @@ const PhotoSchema = new Mongoose.Schema({
     // tipo de archivo
     mimeType: { type: String, required: true },
     // fecha de creación
-    createdAct: { type: Boolean, required: true, default: false },
+    createdAct: { type: Boolean, required: true, default: Date.now },
     // likes
     favorite: { type: Boolean, required: true, default: false },
     // si eventualmente desea asignar la foto a un album

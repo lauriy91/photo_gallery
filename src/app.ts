@@ -6,6 +6,9 @@ import session, {Session} from "express-session";
 import { join } from "path";
 import mongoose from "mongoose";
 
+// importación de las rutas
+import {router as homeRouter} from "./routes/login.route";
+
 export const app = express();
 
 // para habilitar las variables de entorno
@@ -29,6 +32,9 @@ app.use(
         saveUninitialized: false,
     })
 );
+
+// Indicación para direccionar a home
+app.use(homeRouter);
 
 // Conexión
 const options: mongoose.ConnectOptions = {
